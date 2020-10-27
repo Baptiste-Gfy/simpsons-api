@@ -18,11 +18,12 @@ class App extends React.Component {
     
 
   getQuote() {
-    axios.get('https://randomuser.me/api?nat=fr')
-    .then(response => response.data)
-    .then(data => {
+    axios.get('https://thesimpsonsquoteapi.glitch.me/quotes')
+    .then((response) => response.data)
+      .then(data => {
+      console.log(data)
       this.setState({
-        quote: data,
+        quote: data[0],
       });
   });
 }
